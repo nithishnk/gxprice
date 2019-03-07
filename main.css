@@ -1,0 +1,82 @@
+
+   #gxlogo
+   {
+       width:10%;
+   }
+   @media only screen and (max-width:767px){
+#desktop
+{
+    display: none;
+}
+   }
+   @media only screen and (min-width:768px){
+    #mobile
+    {
+        display: none;
+    }
+       }
+@media only screen and (min-width:768px){
+   .button1 {
+       
+       margin-top: 80px;
+    }
+}
+.button1 {
+    float: left;
+}
+@media only screen and (min-width:768px){
+    .button2{
+        margin-top: 80px;
+    }
+}
+.button2{
+    float: right;
+}
+
+    .date{
+        
+        color: black;
+        margin-left: -18px;
+        
+    }
+
+    .val{
+        color: black;
+        font-size: 2.5em; 
+        text-align: left
+         }
+
+    .first{
+        color: black;
+       
+    }
+
+    .second{
+        color: black;
+    }
+
+    .first1{
+     font-size: 18px;
+     color: black;
+    }
+
+    .second1{
+      font-size: 18px;
+      color: black;
+      }
+    
+
+     
+    .w3-display-left{
+        position:absolute;
+        top: 10%;
+        left: -6%;
+        transform:translate(0%,-50%);
+        -ms-transform:translate(-0%,-50%)
+    }
+.w3-display-right{
+    position:absolute;
+    top: 10%;
+    right: 9%;
+    transform:translate(0%,-50%);
+    -ms-transform:translate(0%,-50%)}

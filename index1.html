@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <title>gxprice</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css" type="text/css" />
+</head>
+
+<body>
+    <div class="gxlogo">
+        <a href="#"><img src="img/GXToken Blue Portrait Logo.png" id="gxlogo" alt="gxLogo"></a>
+    </div>
+
+    <div class="container">
+            <div class="row">
+                    <div class="col">
+                            <a href="www.globalxchangetoken.com" class="btn btn-primary btn-lg active button1" role="button" aria-pressed="true">Website</a>
+
+                    </div>
+                    <div class="col-6">
+                        <div class="date item active mySlides">
+                        <h1 >Wednesday March 6th 2019 </h1>
+                        </div>
+                        <div class="date item mySlides">
+                        <h1 > Thursday March 7th 2019 </h1>
+                        </div>
+                        <div class="date item mySlides">
+                                <h1 > Friday March 8th 2019 </h1>
+                                </div>
+                        <button class="button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+                        <button class="button w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+                        <div class="demo">
+                        <div class="val" >
+                            <h1 class="val" >0.006ETH</h1>
+                        </div>
+                        <div class="row">
+                        <div class="col first">
+                               <h3> +3.11(0.0006 ETH)</h3>
+                        </div>
+                        <div class="col second">
+                             <h3>   8.09 ETH</h3>
+                        </div>
+                        </div>
+                        </div>
+                        <div class="demo">
+                                <div class="val" >
+                                    <h1 class="val" >0.0706ETH</h1>
+                                </div>
+                                <div class="row">
+                                <div class="col first">
+                                       <h3> +3.21(0.206 ETH)</h3>
+                                </div>
+                                <div class="col second">
+                                     <h3>   92.07 ETH</h3>
+                                </div>
+                                </div>
+                        </div>
+
+                        <div class="demo">
+                                <div class="val" >
+                                    <h1 class="val" >1.0706ETH</h1>
+                                </div>
+                                <div class="row">
+                                <div class="col first">
+                                       <h3> +3.1(1.06 ETH)</h3>
+                                </div>
+                                <div class="col second">
+                                     <h3>   92.07 ETH</h3>
+                                </div>
+                                </div>
+                        </div>
+
+                    <div class="row">
+                            <div class="col first1">
+                                    <span > 24 HR CHANGE</span>
+                            </div>
+                            <div class="col second1">
+                                 <span > 24 HR CHANGE</span>
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+                            var slideIndex = 1;
+                            showDivs(slideIndex);
+                            
+                            function plusDivs(n)
+                             {
+                            showDivs(slideIndex += n);
+                            }
+                            
+                            function currentDiv(n)
+                             {
+                            showDivs(slideIndex = n);
+                            }
+                            
+                            function showDivs(n)
+                             {
+                            var i;
+                            var x = document.getElementsByClassName("mySlides");
+                            var dots = document.getElementsByClassName("demo");
+                            if (n > x.length) {slideIndex = 1} 
+                            if (n < 1) {slideIndex = x.length}
+                            for (i = 0; i < x.length; i++) {
+                            x[i].style.display = "none"; 
+                            }
+                            for (i = 0; i < dots.length; i++) 
+                            {
+                            dots[i].style.display = "none";
+                            }
+                            x[slideIndex-1].style.display = "block"; 
+                            dots[slideIndex-1].style.display = "block"; 
+                            }
+                            </script>
+                    <div class="col">
+                            <a href="token.globalxchange.com" class="btn btn-primary btn-lg active button1" role="button" aria-pressed="true">Checkout</a>
+
+                    </div>
+                  </div>
+                  
+       
+                </div>
+            </div>
+<!-- Styles -->
+ <!-- HTML -->
+ <div id="chartdiv" style="height: 500px;">
+
+        
+        <!-- Resources -->
+        <script src="https://www.amcharts.com/lib/4/core.js"></script>
+        <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+        <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+        
+        <!-- Chart code -->
+        <script>
+        // Themes begin
+        am4core.useTheme(am4themes_animated);
+        // Themes end
+        
+        var chart = am4core.create("chartdiv", am4charts.XYChart);
+        
+        var data = [];
+        var value = 50;
+        for(let i = 0; i < 300; i++){
+          let date = new Date();
+          date.setHours(0,0,0,0);
+          date.setDate(i);
+          value -= Math.round((Math.random() < 0.5 ? 1 : -1) * Math.random() * 10);
+          data.push({date:date, value: value});
+        }
+        
+        chart.data = data;
+        
+        // Create axes
+        var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
+        dateAxis.renderer.minGridDistance = 60;
+        
+        var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+        
+        // Create series
+        var series = chart.series.push(new am4charts.LineSeries());
+        series.dataFields.valueY = "value";
+        series.dataFields.dateX = "date";
+        series.tooltipText = "{value}"
+        
+        series.tooltip.pointerOrientation = "vertical";
+        
+        chart.cursor = new am4charts.XYCursor();
+        chart.cursor.snapToSeries = series;
+        chart.cursor.xAxis = dateAxis;
+        
+        //chart.scrollbarY = new am4core.Scrollbar();
+    
+        </script>
+        
+       </div>
+            </body>
+</html>
